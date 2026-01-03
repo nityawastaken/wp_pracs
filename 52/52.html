@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Like Button</title>
+</head>
+<body>
+
+    <h2>Like Counter</h2>
+
+    <button onclick="like()">Like</button>
+    <p>Likes: <span id="count">0</span></p>
+
+    <script>
+        let likes = 0;   // state variable
+
+        function like() {
+            likes = likes + 1;
+            document.getElementById("count").innerText = likes;
+        }
+    </script>
+
+</body>
+</html>

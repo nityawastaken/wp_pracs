@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+</head>
+<body>
+
+    <h2>User Profile</h2>
+
+    <p id="displayName"></p>
+
+    <script>
+        var name = localStorage.getItem("username");
+        document.getElementById("displayName").innerText =
+            "Welcome, " + name;
+    </script>
+
+</body>
+</html>

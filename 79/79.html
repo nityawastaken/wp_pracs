@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Management System</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        li {
+            background-color: #ffffff;
+            padding: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #cc0000;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #990000;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Student Management System</h1>
+
+    <ul id="studentList"></ul>
+
+    <script>
+        // Array of students
+        let students = ["Ravi", "Anita", "Suresh", "Meena"];
+
+        // Function to display students
+        function displayStudents() {
+            const list = document.getElementById("studentList");
+            list.innerHTML = "";
+
+            students.forEach((student, index) => {
+                const li = document.createElement("li");
+                li.textContent = student;
+
+                const btn = document.createElement("button");
+                btn.textContent = "Delete";
+                btn.onclick = () => deleteStudent(index);
+
+                li.appendChild(btn);
+                list.appendChild(li);
+            });
+        }
+
+        // Function to delete a student
+        function deleteStudent(index) {
+            students.splice(index, 1);
+            displayStudents();
+        }
+
+        // Initial display
+        displayStudents();
+    </script>
+
+</body>
+</html>

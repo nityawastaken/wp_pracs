@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Management System - Edit</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 70%;
+            margin: auto;
+            border-collapse: collapse;
+            background-color: #ffffff;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #cccccc;
+            text-align: center;
+        }
+
+        th {
+            background-color: #eeeeee;
+        }
+
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .edit-btn {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Student Management System</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Grade</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody id="studentTable"></tbody>
+</table>
+
+<script>
+    // Student data
+    let students = [
+        { name: "Ravi", age: 20, grade: "A" },
+        { name: "Anita", age: 21, grade: "B" },
+        { name: "Suresh", age: 19, grade: "A" }
+    ];
+
+    // Display students
+    function displayStudents() {
+        const table = document.getElementById("studentTable");
+        table.innerHTML = "";
+
+        students.forEach((student, index) => {
+            const row = document.createElement("tr");
+
+            row.innerHTML = `
+                <td>${student.name}</td>
+                <td>${student.age}</td>
+                <td>${student.grade}</td>
+                <td>
+                    <button class="edit-btn" onclick="editStudent(${index})">
+                        Edit
+                    </button>
+                </td>
+            `;
+
+            table.appendChild(row);
+        });
+    }
+
+    // Edit student
+    function editStudent(index) {
+        const name = prompt("Enter new name:", students[index].name);
+        const age = prompt("Enter new age:", students[index].age);
+        const grade = prompt("Enter new grade:", students[index].grade);
+
+        if (name && age && grade) {
+            students[index].name = name;
+            students[index].age = age;
+            students[index].grade = grade;
+            displayStudents();
+        }
+    }
+
+    // Initial display
+    displayStudents();
+</script>
+
+</body>
+</html>

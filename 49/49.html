@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real-Time Input</title>
+</head>
+<body>
+
+    <h2>Real-Time Input Display</h2>
+
+    <input type="text" id="inputField" oninput="showText()">
+
+    <p>You typed: <span id="output"></span></p>
+
+    <script>
+        let inputValue = "";   // state variable
+
+        function showText() {
+            inputValue = document.getElementById("inputField").value;
+            document.getElementById("output").innerText = inputValue;
+        }
+    </script>
+
+</body>
+</html>

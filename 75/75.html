@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library Book Catalog</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        ul {
+            width: 400px;
+            margin: auto;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #ffffff;
+            padding: 10px;
+            margin-bottom: 8px;
+            border: 1px solid #cccccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        button {
+            background-color: #cc0000;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #990000;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Library Book Catalog</h1>
+
+<ul id="bookList"></ul>
+
+<script>
+    // Array of books
+    let books = [
+        "The Alchemist",
+        "Harry Potter",
+        "Atomic Habits",
+        "Wings of Fire"
+    ];
+
+    // Display books
+    function displayBooks() {
+        const list = document.getElementById("bookList");
+        list.innerHTML = "";
+
+        books.forEach((book, index) => {
+            const li = document.createElement("li");
+            li.textContent = book;
+
+            const btn = document.createElement("button");
+            btn.textContent = "Delete";
+            btn.onclick = () => deleteBook(index);
+
+            li.appendChild(btn);
+            list.appendChild(li);
+        });
+    }
+
+    // Delete book
+    function deleteBook(index) {
+        books.splice(index, 1);
+        displayBooks();
+    }
+
+    // Initial display
+    displayBooks();
+</script>
+
+</body>
+</html>

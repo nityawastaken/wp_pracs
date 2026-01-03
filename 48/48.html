@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup Form</title>
+</head>
+<body>
+
+    <h2>Signup Form</h2>
+
+    <label>Name:</label><br>
+    <input type="text" id="name" oninput="validate()">
+    <p id="nameError" style="color:red;"></p>
+
+    <label>Email:</label><br>
+    <input type="email" id="email" oninput="validate()">
+    <p id="emailError" style="color:red;"></p>
+
+    <label>Password:</label><br>
+    <input type="password" id="password" oninput="validate()">
+    <p id="passwordError" style="color:red;"></p>
+
+    <script>
+        // state variables
+        let state = {
+            name: "",
+            email: "",
+            password: ""
+        };
+
+        function validate() {
+            state.name = document.getElementById("name").value;
+            state.email = document.getElementById("email").value;
+            state.password = document.getElementById("password").value;
+
+            // Name validation
+            document.getElementById("nameError").innerText =
+                state.name === "" ? "Name is required" : "";
+
+            // Email validation
+            document.getElementById("emailError").innerText =
+                state.email === "" ? "Email is required" : "";
+
+            // Password validation
+            document.getElementById("passwordError").innerText =
+                state.password.length < 6
+                    ? "Password must be at least 6 characters"
+                    : "";
+        }
+    </script>
+
+</body>
+</html>

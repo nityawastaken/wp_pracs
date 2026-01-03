@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Management System – Display</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        table {
+            width: 70%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #ffffff;
+        }
+
+        th, td {
+            border: 1px solid #cccccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #eeeeee;
+        }
+
+        ul {
+            width: 40%;
+            margin: 20px auto;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #ffffff;
+            padding: 10px;
+            margin-bottom: 8px;
+            border: 1px solid #cccccc;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Student Management System</h1>
+
+<h2>Students Table (Roll No Wise)</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Grade</th>
+        </tr>
+    </thead>
+    <tbody id="studentTable"></tbody>
+</table>
+
+<h2>Students List</h2>
+<ul id="studentList"></ul>
+
+<script>
+    // Student data
+    let students = [
+        { roll: 101, name: "Ravi", age: 20, grade: "A" },
+        { roll: 102, name: "Anita", age: 21, grade: "B" },
+        { roll: 103, name: "Suresh", age: 19, grade: "A" }
+    ];
+
+    // Display students in table
+    function displayTable() {
+        const table = document.getElementById("studentTable");
+        table.innerHTML = "";
+
+        students.forEach(student => {
+            const row = document.createElement("tr");
+
+            row.innerHTML = `
+                <td>${student.roll}</td>
+                <td>${student.name}</td>
+                <td>${student.age}</td>
+                <td>${student.grade}</td>
+            `;
+
+            table.appendChild(row);
+        });
+    }
+
+    // Display students in list
+    function displayList() {
+        const list = document.getElementById("studentList");
+        list.innerHTML = "";
+
+        students.forEach(student => {
+            const li = document.createElement("li");
+            li.textContent = 
+                "Roll No: " + student.roll + 
+                ", Name: " + student.name + 
+                ", Age: " + student.age + 
+                ", Grade: " + student.grade;
+
+            list.appendChild(li);
+        });
+    }
+
+    // Initial display
+    displayTable();
+    displayList();
+</script>
+
+</body>
+</html>

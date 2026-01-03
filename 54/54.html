@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dropdown Selection</title>
+</head>
+<body>
+
+    <h2>Select an Option</h2>
+
+    <select onchange="showSelection()" id="dropdown">
+        <option value="">--Select--</option>
+        <option value="Option 1">Option 1</option>
+        <option value="Option 2">Option 2</option>
+        <option value="Option 3">Option 3</option>
+    </select>
+
+    <p>Selected Option: <span id="result">None</span></p>
+
+    <script>
+        let selectedValue = "";   // state variable
+
+        function showSelection() {
+            selectedValue = document.getElementById("dropdown").value;
+            document.getElementById("result").innerText =
+                selectedValue === "" ? "None" : selectedValue;
+        }
+    </script>
+
+</body>
+</html>

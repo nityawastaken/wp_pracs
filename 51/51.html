@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form with Alert</title>
+</head>
+<body>
+
+    <h2>User Form</h2>
+
+    <form onsubmit="submitForm(event)">
+        <label>Name:</label><br>
+        <input type="text" id="name"><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" id="email"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        // state variables
+        let formState = {
+            name: "",
+            email: ""
+        };
+
+        function submitForm(event) {
+            event.preventDefault(); // prevent page reload
+
+            formState.name = document.getElementById("name").value;
+            formState.email = document.getElementById("email").value;
+
+            alert(
+                "Name: " + formState.name + "\n" +
+                "Email: " + formState.email
+            );
+        }
+    </script>
+
+</body>
+</html>
