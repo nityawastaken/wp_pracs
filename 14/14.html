@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Webpage</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        div {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Desktop view */
+        @media (min-width: 768px) {
+            div {
+                background-color: lightblue;
+                font-size: 24px;
+            }
+        }
+
+        /* Mobile view */
+        @media (max-width: 767px) {
+            div {
+                background-color: lightcoral;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h2>Responsive Webpage</h2>
+        <p>
+            Resize the screen to see the layout change for mobile and desktop.
+        </p>
+    </div>
+
+</body>
+</html>

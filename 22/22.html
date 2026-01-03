@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form Validation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        form {
+            width: 400px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        input[type="submit"] {
+            margin-top: 15px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var confirm = document.getElementById("confirm").value;
+            var error = document.getElementById("error");
+
+            error.innerHTML = "";
+
+            if (username == "") {
+                error.innerHTML = "Username cannot be empty";
+                return false;
+            }
+
+            if (password == "") {
+                error.innerHTML = "Password cannot be empty";
+                return false;
+            }
+
+            if (password != confirm) {
+                error.innerHTML = "Passwords do not match";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+    <form onsubmit="return validateForm()">
+        <h2>Register</h2>
+
+        <label>Username</label>
+        <input type="text" id="username">
+
+        <label>Password</label>
+        <input type="password" id="password">
+
+        <label>Confirm Password</label>
+        <input type="password" id="confirm">
+
+        <div id="error" class="error"></div>
+
+        <input type="submit" value="Register">
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        form {
+            width: 420px;
+            margin: 60px auto;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 80px;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+
+        input[type="submit"] {
+            margin-top: 15px;
+            padding: 8px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var suggestion = document.getElementById("suggestion").value;
+            var rating = document.getElementsByName("rating");
+            var error = document.getElementById("error");
+
+            error.innerHTML = "";
+
+            // Name validation
+            if (name == "") {
+                error.innerHTML = "Name cannot be empty";
+                return false;
+            }
+
+            // Email validation
+            if (email == "" || email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+                error.innerHTML = "Enter a valid email address";
+                return false;
+            }
+
+            // Suggestions validation
+            if (suggestion == "") {
+                error.innerHTML = "Suggestions cannot be empty";
+                return false;
+            }
+
+            // Rating validation
+            var selected = false;
+            for (var i = 0; i < rating.length; i++) {
+                if (rating[i].checked) {
+                    selected = true;
+                }
+            }
+
+            if (!selected) {
+                error.innerHTML = "Please select a rating";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+    <form onsubmit="return validateForm()">
+        <h3>Feedback Form</h3>
+
+        <label>Name</label>
+        <input type="text" id="name">
+
+        <label>Email</label>
+        <input type="text" id="email">
+
+        <label>Rating</label>
+        <input type="radio" name="rating"> Poor
+        <input type="radio" name="rating"> Good
+        <input type="radio" name="rating"> Excellent
+
+        <label>Suggestions</label>
+        <textarea id="suggestion"></textarea>
+
+        <label>
+            <input type="checkbox">
+            Yes, I want updates
+        </label>
+
+        <div id="error" class="error"></div>
+
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>

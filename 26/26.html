@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        form {
+            width: 400px;
+            margin: 60px auto;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, select {
+            margin-top: 5px;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+
+        input[type="submit"] {
+            margin-top: 15px;
+            padding: 8px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var gender = document.getElementsByName("gender");
+            var hobbies = document.getElementsByName("hobby");
+            var course = document.getElementById("course").value;
+            var error = document.getElementById("error");
+
+            error.innerHTML = "";
+
+            // 1. Name validation
+            if (name == "") {
+                error.innerHTML = "Name cannot be empty";
+                return false;
+            }
+
+            // 2. Gender validation
+            var genderSelected = false;
+            for (var i = 0; i < gender.length; i++) {
+                if (gender[i].checked) {
+                    genderSelected = true;
+                }
+            }
+            if (!genderSelected) {
+                error.innerHTML = "Please select a gender";
+                return false;
+            }
+
+            // 3. Hobbies validation
+            var hobbySelected = false;
+            for (var i = 0; i < hobbies.length; i++) {
+                if (hobbies[i].checked) {
+                    hobbySelected = true;
+                }
+            }
+            if (!hobbySelected) {
+                error.innerHTML = "Please select at least one hobby";
+                return false;
+            }
+
+            // 4. Course validation
+            if (course == "select") {
+                error.innerHTML = "Please select a course";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+    <form onsubmit="return validateForm()">
+        <h3>Student Registration</h3>
+
+        <label>Name</label>
+        <input type="text" id="name">
+
+        <label>Gender</label>
+        <input type="radio" name="gender"> Male
+        <input type="radio" name="gender"> Female
+
+        <label>Hobbies</label>
+        <input type="checkbox" name="hobby"> Reading
+        <input type="checkbox" name="hobby"> Sports
+        <input type="checkbox" name="hobby"> Music
+
+        <label>Course</label>
+        <select id="course">
+            <option value="select">Select Course</option>
+            <option>Computer Science</option>
+            <option>IT</option>
+            <option>Electronics</option>
+        </select>
+
+        <div id="error" class="error"></div>
+
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>

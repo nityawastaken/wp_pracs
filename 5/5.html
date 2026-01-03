@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Box Model</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .box {
+            width: 300px;
+            background-color: #add8e6; /* Content area */
+            padding: 20px;             /* Space inside border */
+            border: 5px solid #000;    /* Border */
+            margin: 40px auto;         /* Space outside border */
+        }
+
+        p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>CSS Box Model Demonstration</h2>
+
+    <div class="box">
+        <p>
+            This is the content area.  
+            Padding creates space inside the border.  
+            Border surrounds the padding and content.  
+            Margin creates space outside the border.
+        </p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        form {
+            width: 420px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, select {
+            margin-top: 5px;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+
+        input[type="submit"] {
+            margin-top: 15px;
+            padding: 8px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var contact = document.getElementById("contact").value;
+            var gender = document.getElementsByName("gender");
+            var events = document.getElementsByName("event");
+            var eventType = document.getElementById("eventType").value;
+            var error = document.getElementById("error");
+
+            error.innerHTML = "";
+
+            // Name validation
+            if (name == "") {
+                error.innerHTML = "Full Name cannot be empty";
+                return false;
+            }
+
+            // Email validation (basic)
+            if (email == "" || email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+                error.innerHTML = "Enter a valid email address";
+                return false;
+            }
+
+            // Contact number validation
+            if (contact == "" || contact.length != 10 || isNaN(contact)) {
+                error.innerHTML = "Contact number must be exactly 10 digits";
+                return false;
+            }
+
+            // Gender validation
+            var genderSelected = false;
+            for (var i = 0; i < gender.length; i++) {
+                if (gender[i].checked) {
+                    genderSelected = true;
+                }
+            }
+            if (!genderSelected) {
+                error.innerHTML = "Please select a gender";
+                return false;
+            }
+
+            // Events validation
+            var eventSelected = false;
+            for (var i = 0; i < events.length; i++) {
+                if (events[i].checked) {
+                    eventSelected = true;
+                }
+            }
+            if (!eventSelected) {
+                error.innerHTML = "Please select at least one event";
+                return false;
+            }
+
+            // Event type validation
+            if (eventType == "select") {
+                error.innerHTML = "Please select an event type";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+    <form onsubmit="return validateForm()">
+        <h3>Event Registration</h3>
+
+        <label>Full Name</label>
+        <input type="text" id="name">
+
+        <label>Email</label>
+        <input type="text" id="email">
+
+        <label>Contact Number</label>
+        <input type="text" id="contact">
+
+        <label>Gender</label>
+        <input type="radio" name="gender"> Male
+        <input type="radio" name="gender"> Female
+
+        <label>Events to Participate</label>
+        <input type="checkbox" name="event"> Quiz
+        <input type="checkbox" name="event"> Debate
+        <input type="checkbox" name="event"> Workshop
+
+        <label>Event Type</label>
+        <select id="eventType">
+            <option value="select">Select One</option>
+            <option>Technical</option>
+            <option>Non-Technical</option>
+        </select>
+
+        <div id="error" class="error"></div>
+
+        <input type="submit" value="Register">
+    </form>
+
+</body>
+</html>

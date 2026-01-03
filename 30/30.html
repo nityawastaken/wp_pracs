@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interests Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        form {
+            width: 380px;
+            margin: 80px auto;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+
+        input[type="submit"] {
+            margin-top: 15px;
+            padding: 8px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var interests = document.getElementsByName("interest");
+            var error = document.getElementById("error");
+
+            error.innerHTML = "";
+
+            // Name validation
+            if (name == "") {
+                error.innerHTML = "Name cannot be empty";
+                return false;
+            }
+
+            // Email validation
+            if (email == "" || email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+                error.innerHTML = "Enter a valid email address";
+                return false;
+            }
+
+            // Interests validation
+            var selected = false;
+            for (var i = 0; i < interests.length; i++) {
+                if (interests[i].checked) {
+                    selected = true;
+                }
+            }
+
+            if (!selected) {
+                error.innerHTML = "Please select at least one interest";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+    <form onsubmit="return validateForm()">
+        <h3>User Interests</h3>
+
+        <label>Name</label>
+        <input type="text" id="name">
+
+        <label>Email</label>
+        <input type="text" id="email">
+
+        <label>Interests</label>
+        <input type="checkbox" name="interest"> Technology <br>
+        <input type="checkbox" name="interest"> Sports <br>
+        <input type="checkbox" name="interest"> Music <br>
+        <input type="checkbox" name="interest"> Fashion
+
+        <div id="error" class="error"></div>
+
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>

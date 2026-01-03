@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Validation Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        form {
+            width: 350px;
+            margin: 80px auto;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+
+        input[type="submit"] {
+            margin-top: 15px;
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+            var mobile = document.getElementById("mobile").value;
+            var terms = document.getElementById("terms").checked;
+            var error = document.getElementById("error");
+
+            error.innerHTML = "";
+
+            // Mobile number pattern (exactly 10 digits)
+            var mobilePattern = /^[0-9]{10}$/;
+
+            if (!mobile.match(mobilePattern)) {
+                error.innerHTML = "Mobile number must contain exactly 10 digits";
+                return false;
+            }
+
+            if (!terms) {
+                error.innerHTML = "Please accept the Terms and Conditions";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+    <form onsubmit="return validateForm()">
+        <h3>Registration</h3>
+
+        <label>Mobile Number</label>
+        <input type="text" id="mobile">
+
+        <label>
+            <input type="checkbox" id="terms">
+            I agree to the Terms and Conditions
+        </label>
+
+        <div id="error" class="error"></div>
+
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Dropdown</title>
+
+    <style>
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            display: inline-block;
+            position: relative;
+            background: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #555;
+        }
+
+        li:hover ul {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li>Menu
+            <ul>
+                <li>Option 1</li>
+                <li>Option 2</li>
+            </ul>
+        </li>
+    </ul>
+
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Dropdown Menu</title>
+
+    <style>
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+        }
+
+        nav ul li {
+            float: left;
+            position: relative;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 14px 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        /* Dropdown menu */
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #444;
+            min-width: 150px;
+        }
+
+        nav ul li ul li {
+            float: none;
+        }
+
+        /* Show dropdown on hover */
+        nav ul li:hover ul {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+
+            <li>
+                <a href="#">Services</a>
+                <ul>
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">Development</a></li>
+                    <li><a href="#">SEO</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+</body>
+</html> -->

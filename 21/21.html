@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        form {
+            width: 450px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        .options {
+            margin-top: 5px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        input[type="submit"] {
+            margin-top: 15px;
+            padding: 8px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form>
+        <h2>Survey Form</h2>
+
+        <label>How did you hear about us?</label>
+        <div class="options">
+            <input type="radio" name="source"> Friends <br>
+            <input type="radio" name="source"> Internet <br>
+            <input type="radio" name="source"> Advertisement
+        </div>
+
+        <label>Which features do you like?</label>
+        <div class="options">
+            <input type="checkbox"> Design <br>
+            <input type="checkbox"> Performance <br>
+            <input type="checkbox"> Ease of Use
+        </div>
+
+        <label>Overall Experience</label>
+        <select>
+            <option>Select</option>
+            <option>Excellent</option>
+            <option>Good</option>
+            <option>Average</option>
+            <option>Poor</option>
+        </select>
+
+        <input type="submit" value="Submit Survey">
+    </form>
+
+</body>
+</html>

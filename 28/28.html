@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        form {
+            width: 400px;
+            margin: 60px auto;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            border: 1px solid #aaa;
+        }
+
+        textarea {
+            height: 80px;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+
+        input[type="submit"] {
+            margin-top: 15px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var mobile = document.getElementById("mobile").value;
+            var message = document.getElementById("message").value;
+            var error = document.getElementById("error");
+
+            error.innerHTML = "";
+
+            if (name == "") {
+                error.innerHTML = "Name cannot be empty";
+                return false;
+            }
+
+            if (message == "") {
+                error.innerHTML = "Message cannot be empty";
+                return false;
+            }
+
+            if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+                error.innerHTML = "Enter a valid email address";
+                return false;
+            }
+
+            if (mobile.length != 10 || isNaN(mobile)) {
+                error.innerHTML = "Mobile number must be exactly 10 digits";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+    <form onsubmit="return validateForm()">
+        <h3>Contact Us</h3>
+
+        <label>Name</label>
+        <input type="text" id="name">
+
+        <label>Email</label>
+        <input type="text" id="email">
+
+        <label>Mobile Number</label>
+        <input type="text" id="mobile">
+
+        <label>Message</label>
+        <textarea id="message"></textarea>
+
+        <div id="error" class="error"></div>
+
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>
