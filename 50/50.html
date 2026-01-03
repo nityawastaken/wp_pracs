@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show Hide Text</title>
+</head>
+<body>
+
+    <h2>Show / Hide Example</h2>
+
+    <button onclick="toggleText()">Show</button>
+
+    <p id="text" style="display: none;">
+        This text can be shown or hidden.
+    </p>
+
+    <script>
+        let isVisible = false;   // state variable
+
+        function toggleText() {
+            const text = document.getElementById("text");
+            const button = document.querySelector("button");
+
+            if (isVisible) {
+                text.style.display = "none";
+                button.innerText = "Show";
+            } else {
+                text.style.display = "block";
+                button.innerText = "Hide";
+            }
+
+            isVisible = !isVisible;
+        }
+    </script>
+
+</body>
+</html>

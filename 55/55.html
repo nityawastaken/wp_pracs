@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Counter</title>
+</head>
+<body>
+
+    <h2>Character Counter</h2>
+
+    <input type="text" id="textInput" oninput="countChars()">
+    <p>Characters typed: <span id="count">0</span></p>
+
+    <script>
+        let charCount = 0;   // state variable
+
+        function countChars() {
+            const text = document.getElementById("textInput").value;
+            charCount = text.length;
+            document.getElementById("count").innerText = charCount;
+        }
+    </script>
+
+</body>
+</html>

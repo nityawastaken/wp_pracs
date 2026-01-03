@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Input</title>
+</head>
+<body>
+
+    <h2>Enter Your Name</h2>
+
+    <input type="text" id="username">
+    <br><br>
+
+    <button onclick="saveName()">Submit</button>
+
+    <script>
+        function saveName() {
+            var name = document.getElementById("username").value;
+            localStorage.setItem("username", name);
+            window.location.href = "profile.html";
+        }
+    </script>
+
+</body>
+</html>

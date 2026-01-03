@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabs Example</title>
+    <style>
+        .tab {
+            padding: 8px 15px;
+            cursor: pointer;
+            border: 1px solid #000;
+            display: inline-block;
+        }
+        .active {
+            background-color: #ddd;
+        }
+        .content {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Tabs</h2>
+
+    <div>
+        <span class="tab active" onclick="showTab(1)" id="tab1">Tab 1</span>
+        <span class="tab" onclick="showTab(2)" id="tab2">Tab 2</span>
+    </div>
+
+    <div class="content" id="content">
+        Content of Tab 1
+    </div>
+
+    <script>
+        let activeTab = 1;   // state variable
+
+        function showTab(tab) {
+            activeTab = tab;
+
+            document.getElementById("tab1").classList.remove("active");
+            document.getElementById("tab2").classList.remove("active");
+
+            if (activeTab === 1) {
+                document.getElementById("tab1").classList.add("active");
+                document.getElementById("content").innerText =
+                    "Content of Tab 1";
+            } else {
+                document.getElementById("tab2").classList.add("active");
+                document.getElementById("content").innerText =
+                    "Content of Tab 2";
+            }
+        }
+    </script>
+
+</body>
+</html>
