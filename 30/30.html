@@ -53,6 +53,8 @@
 
             error.innerHTML = "";
 
+            var emailpattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
             // Name validation
             if (name == "") {
                 error.innerHTML = "Name cannot be empty";
@@ -60,7 +62,7 @@
             }
 
             // Email validation
-            if (email == "" || email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+            if (!email.match(emailpattern)) {
                 error.innerHTML = "Enter a valid email address";
                 return false;
             }

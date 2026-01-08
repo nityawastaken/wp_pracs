@@ -2,6 +2,13 @@
 <html>
 <head>
     <title>User Input</title>
+    <script>
+        function saveName() {
+            var name = document.getElementById("username").value;
+            localStorage.setItem("username", name);
+            window.location.href = "profile.html";
+        }
+    </script>
 </head>
 <body>
 
@@ -12,13 +19,7 @@
 
     <button onclick="saveName()">Submit</button>
 
-    <script>
-        function saveName() {
-            var name = document.getElementById("username").value;
-            localStorage.setItem("username", name);
-            window.location.href = "profile.html";
-        }
-    </script>
+    
 
 </body>
 </html>

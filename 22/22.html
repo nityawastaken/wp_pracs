@@ -58,11 +58,16 @@
 
             if (username == "") {
                 error.innerHTML = "Username cannot be empty";
-                return false;
+                return error.innerHTML;
             }
 
             if (password == "") {
                 error.innerHTML = "Password cannot be empty";
+                return false;
+            }
+
+            if (password.length < 8) {
+                error.innerHTML = "Password must be at least 6 characters long";
                 return false;
             }
 
@@ -83,9 +88,11 @@
 
         <label>Username</label>
         <input type="text" id="username">
+        <div id="error" class="error"></div>
 
         <label>Password</label>
         <input type="password" id="password">
+        <div id="error" class="error"></div>
 
         <label>Confirm Password</label>
         <input type="password" id="confirm">

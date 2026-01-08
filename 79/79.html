@@ -31,7 +31,14 @@
             justify-content: space-between;
             align-items: center;
             border-radius: 4px;
+                        transition: transform 0.2s;
+
         }
+        li:hover {
+            transform: scale(1.02);
+
+        }
+      
 
         button {
             background-color: #cc0000;
@@ -54,7 +61,7 @@
 
     <script>
         // Array of students
-        let students = ["Ravi", "Anita", "Suresh", "Meena"];
+        let students = ["Ravi", "Anita", "Suresh", "Meeena"];
 
         // Function to display students
         function displayStudents() {

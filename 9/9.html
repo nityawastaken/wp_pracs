@@ -10,13 +10,19 @@
         }
 
         p {
-            text-align: justify;
+            text-align: right;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
-        span {
+        .striked {
             text-decoration: line-through;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .right{
+            text-align: right;
         }
     </style>
 </head>
@@ -31,8 +37,14 @@
     </p>
 
     <p>
-        <span>This text is crossed out.</span>
+        <span class="striked">This text is strikethrough.</span>
     </p>
+      <p>
+        <span class="bold">This text is bold.</span>
+    </p>
+        <p class="bold" style = "font-style: italic;">
+            This text is right aligned.
+        </p>
 
 </body>
 </html>

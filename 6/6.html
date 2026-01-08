@@ -4,26 +4,62 @@
     <title>Two Column Layout</title>
 
     <style>
-        div {
+        .box {
             width: 45%;
             float: left;
             padding: 20px;
             box-sizing: border-box;
+            background-color: aqua;
+        }
+        body{
+            background-color: black;
+            padding-top: 0%;
+        }
+        h1{
+            color: white;
+            margin: auto;
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 10px;
+        }
+        ul {
+    display: flex;
+    padding: 0;
+    justify-content: space-around;
+            
+            margin: 0%;
+            background-color: rgb(100, 100, 100);
+        }
+        a{
+            color: white;
+            font-style: normal;
+            cursor: pointer;
         }
     </style>
 </head>
 
 <body>
+    <ul>
+        <a href="5/5.html">Go to Page 5</a>
+    <h1>Two Column Layout Example</h1>
+            <a href="5/5.html">Go to Page 5</a>
 
-    <div style="background-color: lightblue;">
+                    <a href="5/5.html">Go to Page 5</a>
+
+    </ul>
+    
+
+    <div class ="box"  >
         <h3>Column 1</h3>
         <p>This is the first column.</p>
     </div>
 
-    <div style="background-color: lightpink;">
+    <div class ="box"  style="background-color: lightpink;">
         <h3>Column 2</h3>
         <p>This is the second column.</p>
     </div>
+
+
 
 </body>
 </html>

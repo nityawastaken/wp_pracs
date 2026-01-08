@@ -71,8 +71,11 @@
 
             // 3. Hobbies validation
             var hobbySelected = false;
+            var counter = 0;
             for (var i = 0; i < hobbies.length; i++) {
                 if (hobbies[i].checked) {
+                    counter++;
+                    if(counter>=2)
                     hobbySelected = true;
                 }
             }
@@ -111,7 +114,7 @@
 
         <label>Course</label>
         <select id="course">
-            <option value="select">Select Course</option>
+            <option>Select Course</option>
             <option>Computer Science</option>
             <option>IT</option>
             <option>Electronics</option>

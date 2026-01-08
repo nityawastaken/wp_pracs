@@ -4,6 +4,12 @@ function LiveInput() {
   // State to store input value
   const [text, setText] = useState("");
 
+  function handlechange(e){
+    setText(e.target.value);
+  }
+
+
+
   return (
     <div>
       <h2>Live Input Example</h2>
@@ -12,7 +18,7 @@ function LiveInput() {
         type="text"
         placeholder="Type something..."
         value={text}
-        onChange={(e) => setText(e.target.value)}
+        onChange={handlechange}
       />
 
       <p>You typed: {text}</p>

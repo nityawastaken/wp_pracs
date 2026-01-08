@@ -1,50 +1,72 @@
 # wp_pracs
 wp_goldmine_2026
 
+APIS
+// first enter project directory, and run npm init -y
+// then run: npm install express mongoose
+// then create the js files
+// then run: node server.js
+// then check on postman
 
-1. Create a simple HTML webpage that displays a heading, a paragraph, and an image. Apply basic CSS to change the background color, text color, and font style.
+
+React
+npx create-react-app my-app
+npm start
+
+adding data to mongdodb
+mongosh
+use myDatabase
+db.users.insertOne({
+  name: "Rishi",
+  age: 21,
+  branch: "Computer Engineering"
+})
+
+
+
+<!-- 1. Create a simple HTML webpage that displays a heading, a paragraph, and an image. Apply basic CSS to change the background color, text color, and font style.
 
 2. Design a webpage using HTML lists to display a navigation menu. Use CSS to style the menu horizontally with hover effects.
 
-3. Create an HTML table showing student details (Roll No, Name, Class, Marks). Use CSS to add borders, padding, and alternate row colors.
+3. Create an HTML table showing student details (Roll No, Name, Class, Marks). Use CSS to add borders, padding, and alternate row colors. -->
 
-4. Design a registration form using HTML form elements (text box, radio button, checkbox, submit button). Style the form using CSS for proper alignment.
+<!-- 4. Design a registration form using HTML form elements (text box, radio button, checkbox, submit button). Style the form using CSS for proper alignment. -->
 
-5. Create a webpage that demonstrates the use of CSS box model (margin, border, padding, and content). Clearly show the effect of each property.
+<!-- 5. Create a webpage that demonstrates the use of CSS box model (margin, border, padding, and content). Clearly show the effect of each property. -->
 
-6. Develop a webpage using div elements and apply CSS to create a two-column layout.
+<!-- 6. Develop a webpage using div elements and apply CSS to create a two-column layout. -->
+<!-- 
+7. Create an HTML page using semantic elements (header, nav, section, footer) and style them using CSS. -->
 
-7. Create an HTML page using semantic elements (header, nav, section, footer) and style them using CSS.
+<!-- 8. Design a webpage with an image gallery using HTML and CSS. Add hover effects to images. -->
 
-8. Design a webpage with an image gallery using HTML and CSS. Add hover effects to images.
+<!-- 9. Create a webpage that uses different CSS text properties such as text alignment, text decoration, text transformation, and letter spacing. -->
 
-9. Create a webpage that uses different CSS text properties such as text alignment, text decoration, text transformation, and letter spacing.
+<!-- 10. Design a login page using HTML and CSS. Apply proper styling to input fields and buttons.
 
-10. Design a login page using HTML and CSS. Apply proper styling to input fields and buttons.
+11. Create a webpage using CSS positioning (relative, absolute, fixed). Demonstrate the effect of each positioning method. -->
 
-11. Create a webpage using CSS positioning (relative, absolute, fixed). Demonstrate the effect of each positioning method.
+<!-- 12. Develop a webpage that uses CSS flexbox to align items horizontally and vertically. -->
 
-12. Develop a webpage that uses CSS flexbox to align items horizontally and vertically.
+<!-- 13. Create an HTML page that uses external CSS. Apply styles such as background color, font size, and border.
 
-13. Create an HTML page that uses external CSS. Apply styles such as background color, font size, and border.
+14. Design a responsive webpage using CSS media queries for mobile and desktop view. -->
+<!-- 
+15. Create a webpage with a header, footer, and main content area. Use CSS to apply layout, colors, and spacing properly. -->
 
-14. Design a responsive webpage using CSS media queries for mobile and desktop view.
+<!-- 16. Create an HTML page that displays a card layout using div elements. Apply CSS to add shadow effects, border radius, and spacing. -->
 
-15. Create a webpage with a header, footer, and main content area. Use CSS to apply layout, colors, and spacing properly.
-
-16. Create an HTML page that displays a card layout using div elements. Apply CSS to add shadow effects, border radius, and spacing.
-
-17. Create an HTML page with a dropdown navigation menu using HTML and CSS.
+<!-- 17. Create an HTML page with a dropdown navigation menu using HTML and CSS.
 
 18. Create a student registration form using HTML that includes text fields, email, password, radio buttons, checkboxes, a dropdown list, and a submit button. Style the form using CSS.
 
-19. Design a feedback form with name, email, rating (radio buttons), comments (textarea), and submit button. Use CSS to improve layout and appearance.
+19. Design a feedback form with name, email, rating (radio buttons), comments (textarea), and submit button. Use CSS to improve layout and appearance. -->
 
-20. Design a contact us form with name, email, subject, message, and submit button. Use CSS to add spacing, borders, and background color.
+<!-- 20. Design a contact us form with name, email, subject, message, and submit button. Use CSS to add spacing, borders, and background color. -->
 
-21. Design a survey form using HTML forms with multiple choice questions, checkboxes, and dropdown lists. Style it neatly using CSS.
+<!-- 21. Design a survey form using HTML forms with multiple choice questions, checkboxes, and dropdown lists. Style it neatly using CSS. -->
 
-22. Create a login/registration form and write a JavaScript validation program to ensure that:
+<!-- 22. Create a login/registration form and write a JavaScript validation program to ensure that:
     • The username field is not empty
     • The password field is not empty
     • The password and confirm password fields match
@@ -52,9 +74,9 @@ wp_goldmine_2026
 
 23. Create a student login form using HTML. Write a JavaScript program to check that the username and password fields are not left empty. Display suitable error messages and stop the form from submitting if any field is empty.
 
-24. Create a contact form that includes name and email fields. Write a JavaScript program to check whether both fields are filled and validated where correct syntax of email ID is entered and name is alphabet only before submitting the form.
+24. Create a contact form that includes name and email fields. Write a JavaScript program to check whether both fields are filled and validated where correct syntax of email ID is entered and name is alphabet only before submitting the form. -->
 
-25. Design a form that includes a mobile number input field and a Terms and Conditions checkbox. Write a JavaScript program to validate that:
+<!-- 25. Design a form that includes a mobile number input field and a Terms and Conditions checkbox. Write a JavaScript program to validate that:
     • The mobile number contains exactly 10 digits, and
     • The Terms and Conditions checkbox is selected before submitting the form.
     Display appropriate error messages and prevent form submission if any validation fails.
@@ -124,9 +146,9 @@ wp_goldmine_2026
     • Name, email, and suggestions must not be empty.
     • Email must be valid.
     • One rating must be selected.
-    • Subscription checkbox is optional.
+    • Subscription checkbox is optional. -->
 
-32. Create a functional component Greeting that accepts a name prop and displays:
+<!-- 32. Create a functional component Greeting that accepts a name prop and displays:
     • “Hello, [name]! Welcome to React.”
     Then create a parent component that passes different names to Greeting and renders three greetings dynamically.
 
@@ -143,9 +165,9 @@ wp_goldmine_2026
 35. Create a Parent component that renders a Child component.
     • Pass at least 4 different props (string, number, boolean, array) to Child.
     • In Child, display all props properly.
-    • Style the output using CSS.
+    • Style the output using CSS. -->
 
-36. Create a CustomButton component that accepts a label prop and an onClick prop.
+<!-- 36. Create a CustomButton component that accepts a label prop and an onClick prop.
     • When clicked, it should call the onClick function from the parent.
     • Parent component should render three buttons with different messages in the console.
 
@@ -188,9 +210,9 @@ wp_goldmine_2026
 
 46. Create a CalculatorButton component that accepts label and onClick props.
     • Parent component should pass a function to calculate double, square, and cube of a number.
-    • Render three buttons, each calling the respective calculation function and showing the result in the parent.
+    • Render three buttons, each calling the respective calculation function and showing the result in the parent. -->
 
-47. Create a counter component that allows the user to:
+<!-- 47. Create a counter component that allows the user to:
     • Increment or decrement the count by a dynamic step entered in an input field.
     • Reset the count to zero.
     • Display an alert if the count goes negative.
@@ -225,7 +247,7 @@ wp_goldmine_2026
 
 55. Create a text input field that shows:
     • The number of characters typed in real-time.
-    • Use state to track input length dynamically.
+    • Use state to track input length dynamically. -->
 
 56. Create a counter where the user can enter a number as a step:
     • Increment and decrement the count by that step.

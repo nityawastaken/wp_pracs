@@ -44,6 +44,15 @@
         input[type="submit"]:hover {
             background-color: #555;
         }
+        input[type="checkbox"] {
+            width: auto;
+            margin-top: 15px;
+            
+        }
+        input[type="checkbox"]:checked {
+            cursor: pointer;
+            accent-color: aqua;
+        }
     </style>
 </head>
 
@@ -57,6 +66,10 @@
 
         <label>Password</label>
         <input type="password">
+
+        <label>Gender</label>
+        <input type="checkbox" name="gender" value="male"> Male
+        <input type="checkbox" name="gender" value="female"> Female
 
         <input type="submit" value="Login">
     </form>

@@ -2,21 +2,12 @@
 <html>
 <head>
     <title>Advanced Counter</title>
-</head>
-<body>
-
-    <h2>Counter</h2>
-
-    <label>Step Value:</label><br>
-    <input type="number" id="step" value="1"><br><br>
-
-    <button onclick="decrement()">-</button>
-    <button onclick="increment()">+</button>
-    <button onclick="reset()">Reset</button>
-
-    <p>Current Count: <span id="count">0</span></p>
-
-    <script>
+    <style>
+        h2{
+            color: rgb(0, 0, 255);
+        }
+    </style>
+     <script>
         let count = 0;   // state variable
 
         function increment() {
@@ -45,6 +36,21 @@
             document.getElementById("count").innerText = count;
         }
     </script>
+</head>
+<body>
+
+    <h2>Counter</h2>
+
+    <label>Step Value:</label><br>
+    <input type="number" id="step" value="1"><br><br>
+
+    <button onclick="decrement()">-</button>
+    <button onclick="increment()">+</button>
+    <button onclick="reset()">Reset</button>
+
+    <p>Current Count: <span id="count">0</span></p>
+
+   
 
 </body>
 </html>

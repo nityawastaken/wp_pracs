@@ -34,15 +34,18 @@
         }
 
         textarea {
-            height: 80px;
+            height: 180px;
+            background-color: beige;
         }
 
-        .rating {
+        /* .rating {
             margin-top: 5px;
-        }
+        } */
 
         input[type="radio"] {
             width: auto;
+            margin: 1px;
+            accent-color: rgb(231, 239, 6);
         }
 
         input[type="submit"] {
@@ -55,7 +58,10 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #555;
+            background-color: #a01c1c;
+        }
+        footer{
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -72,17 +78,17 @@
         <input type="email">
 
         <label>Rating</label>
-        <div class="rating">
             <input type="radio" name="rate"> Excellent
             <input type="radio" name="rate"> Good
             <input type="radio" name="rate"> Average
-        </div>
 
         <label>Comments</label>
         <textarea></textarea>
 
         <input type="submit" value="Submit Feedback">
     </form>
-
+    <footer>
+        <p style="text-align: center;">&copy; 2024 Feedback Inc.</p>
+    </footer>
 </body>
 </html>
